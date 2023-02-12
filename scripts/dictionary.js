@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 async function getDefinition(word) {
-	const app_id = '9336510d';
-	const app_key = 'b34b1bba1c53dbf06d66095f81f1c670';
+	const app_id = '74dd4ba1';
+	const app_key = 'dcf385fd5faf9ad372ae9bfd19dd45e2';
 	const url = `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${word}`;
 
 	try {
