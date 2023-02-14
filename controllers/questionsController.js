@@ -3,7 +3,6 @@ const { v4: uuid } = require('uuid');
 
 const setQuestion = async (req, res) => {
 	const { word_id, game_id, answer, correct } = req.body;
-
 	try {
 		async function insertGame() {
 			const id = uuid();
@@ -18,7 +17,6 @@ const setQuestion = async (req, res) => {
 				});
 				const [question] = await trx('questions').where('id', id).select('*');
 				await trx.commit();
-				console.log(question, 'hello');
 				res.status(201).json({ question_id: question.id });
 			} catch (error) {
 				await trx.rollback();

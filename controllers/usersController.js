@@ -31,7 +31,6 @@ const setUser = async (req, res) => {
 				});
 				const [user] = await trx('users').where('id', id).select('*');
 				await trx.commit();
-				console.log(user);
 				return user;
 			} catch (error) {
 				await trx.rollback();
