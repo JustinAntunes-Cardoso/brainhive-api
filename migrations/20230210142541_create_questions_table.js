@@ -10,7 +10,7 @@ exports.up = function (knex) {
         table
 			.uuid('word_id')
 			.references('id')
-			.inTable('games')
+			.inTable('words')
 			.onDelete('CASCADE')
 			.onUpdate('CASCADE');
         table.string('answer');
