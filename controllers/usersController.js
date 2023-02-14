@@ -50,7 +50,16 @@ const setUser = async (req, res) => {
 	}
 };
 
-const getUser = async (req, res) => {};
+const getUser = async (req, res) => {
+	const user_id = req.params.userId;
+
+	try {
+		const data = await knex.select().from('users').where('id', user_id);
+		res.status(200).json(data);
+	} catch (error) {
+		res.status(400).send(`Error retrieving games for ${user_id}: ${error}`);
+	}
+};
 
 module.exports = {
 	setUser,

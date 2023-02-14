@@ -12,3 +12,5 @@ npx knex migrate:make create_words_table
 npx knex seed:make words
 
 npx knex migrate:up
+
+npm install uuid
