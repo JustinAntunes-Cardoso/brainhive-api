@@ -1,32 +1,35 @@
 const knex = require('knex')(require('../knexfile'));
 const { v4: uuid } = require('uuid');
 
+//Post a new user to the DB
 const setUser = async (req, res) => {
-	// const { username, email } = req.body;
+	const { username, email } = req.body;
 
 	try {
-	// 	const [existingUsername] = await knex('users')
-	// 		.where({ username })
-	// 		.select('id');
+		//Checks to see if username and email already exists
+		const [existingUsername] = await knex('users')
+			.where({ username })
+			.select('id');
 
-	// 	if (existingUsername) {
-	// 		return res.status(409).json({ error: 'Username already in use' });
-	// 	}
+		if (existingUsername) {
+			return res.status(409).json({ error: 'Username already in use' });
+		}
 
-	// 	const [existingEmail] = await knex('users').where({ email }).select('id');
+		const [existingEmail] = await knex('users').where({ email }).select('id');
 
-	// 	if (existingEmail) {
-	// 		return res.status(409).json({ error: 'Email already in use' });
-	// 	}
+		if (existingEmail) {
+			return res.status(409).json({ error: 'Email already in use' });
+		}
 
+		//If username and email is unique create a new user in the DB
 		async function insertUser() {
 			const id = uuid();
 			const trx = await knex.transaction();
 			try {
 				await trx('users').insert({
 					id,
-					username: 'johndoe',
-					email: 'johndoe@example.com',
+					username: username,
+					email: email,
 					password: 'secret',
 				});
 				const [user] = await trx('users').where('id', id).select('*');
@@ -49,6 +52,7 @@ const setUser = async (req, res) => {
 	}
 };
 
+//Gets a user from the DB
 const getUser = async (req, res) => {
 	const user_id = req.params.userId;
 

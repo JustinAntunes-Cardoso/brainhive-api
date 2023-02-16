@@ -1,6 +1,7 @@
 const knex = require('knex')(require('../knexfile'));
 const { v4: uuid } = require('uuid');
 
+//Post a question to the DB
 const setQuestion = async (req, res) => {
 	const { word_id, game_id, answer, correct } = req.body;
 	try {
@@ -33,6 +34,7 @@ const setQuestion = async (req, res) => {
 	}
 };
 
+//Get all the questions from a specific game 
 const getQuestions = async (req, res) => {
 	const game_id = req.params.gameId;
 
