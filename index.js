@@ -4,6 +4,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 5050;
 const cors = require('cors');
 
+//Routes
 const wordRoutes = require('./routes/wordsRoute');
 const userRoutes = require('./routes/userRoute');
 const gameRoutes = require('./routes/gameRoute');

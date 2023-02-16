@@ -1,7 +1,7 @@
 const knex = require('knex')(require('../knexfile'));
 
 const getEasyWords = async (_req, res) => {
-	//Gets 10 random words from a given level
+	//Gets 10 random words from a the easy difficulty
 	try {
 		const data = await knex
 			.select()
@@ -16,7 +16,7 @@ const getEasyWords = async (_req, res) => {
 };
 
 const getMediumWords = async (_req, res) => {
-	//Gets 10 random words from a given level
+	//Gets 10 random words from a the medium difficulty
 	try {
 		const data = await knex
 			.select()
@@ -31,7 +31,7 @@ const getMediumWords = async (_req, res) => {
 };
 
 const getHardWords = async (_req, res) => {
-	//Gets 10 random words from a given level
+	//Gets 10 random words from a the hard difficulty
 	try {
 		const data = await knex
 			.select()

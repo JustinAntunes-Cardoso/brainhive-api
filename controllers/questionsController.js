@@ -1,9 +1,9 @@
 const knex = require('knex')(require('../knexfile'));
 const { v4: uuid } = require('uuid');
 
+//Post a question to the DB
 const setQuestion = async (req, res) => {
 	const { word_id, game_id, answer, correct } = req.body;
-
 	try {
 		async function insertGame() {
 			const id = uuid();
@@ -18,7 +18,6 @@ const setQuestion = async (req, res) => {
 				});
 				const [question] = await trx('questions').where('id', id).select('*');
 				await trx.commit();
-				console.log(question, 'hello');
 				res.status(201).json({ question_id: question.id });
 			} catch (error) {
 				await trx.rollback();
@@ -35,6 +34,7 @@ const setQuestion = async (req, res) => {
 	}
 };
 
+//Get all the questions from a specific game 
 const getQuestions = async (req, res) => {
 	const game_id = req.params.gameId;
 
