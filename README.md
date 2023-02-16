@@ -1,16 +1,54 @@
-# brainhive-api
-Capstone Project Brainstation
+#BrainHive
+This is a web application for practicing spelling bee words. It includes a list of words, definitions, phonetics, etymologies and audio pronunciations. Users can take spelling quizzes and track their progress.
 
-installed express, cors, knex, dotenv, node, nodemon, axios
+---
 
-npm install knex mysql
+##Getting Started
+To get started with this app, you'll need to have Node.js installed on your machine. Once you have Node.js installed, follow these steps:
 
-npx knex init
+- 1. Clone the frontend from [BrainHive](https://github.com/JustinAntunes-Cardoso/brainhive) to your local machine.
+- 2. Clone the repository to your local machine.
+- 3. Install the dependencies by running `npm install` in the project directory.
+- 4. Install the RDBMS database [MySQL](https://www.mysql.com/).
+- 5. Connect to your MySQL database by making an .env file in the root directory and add your connection variable for the knexfile.js file.
+- 6. Add the migration tables by running `npx knex migrate:latest` in the project directory.
+- 7. Populate the database tables with the word seed by running `npx knex seed:run` in the project directory.
+- 8. Start the backend server by running `npx nodemon index.js`.
 
-npx knex migrate:make create_words_table
+##Features
+BrainHive includes the following features:
 
-npx knex seed:make words
+- Choice of Difficulty: View a list of spelling bee words, their definitions, phonetics, etymologies and audio pronunciations.
+- Quizzes: Take quizzes to test your spelling skills.
+- Progress Tracking: Track your progress and see your quiz scores.
 
-npx knex migrate:up
+##Technologies Used
+This app was built using the following technologies:
 
-npm install uuid
+- [React](https://reactjs.org/): JavaScript library for building user interfaces.
+- [Sass](https://sass-lang.com/): Preprocessor scripting language for CSS.
+- [React Router](https://reactrouter.com/en/main): Library for routing and navigation in a React application.
+- [Axios](https://axios-http.com/): Making HTTP requests.
+- [Node.js](https://nodejs.org/en/): JavaScript runtime for building server-side applications.
+- [Nodemon](https://nodemon.io/): A tool for automatically restarting the Node.js server during development.
+- [Express](https://expressjs.com/): Web framework for Node.js.
+- [Knex](https://knexjs.org/): SQL query builder for Node.js.
+- [MySQL](https://www.mysql.com/): A RDBMS database, used for storing and retrieving user data.
+
+##Acknowledgements
+The word list for this app was sourced from [The National Spelling Bee](https://spellingbee.com/sites/default/files/inline-files/Words_of_the_Champions_Printable_FINAL.pdf).
+The audio pronunciations, definitions, etymologies and phonetics were sourced from [Oxford Dictionaries](https://developer.oxforddictionaries.com/).
+
+---
+
+### Lessons Learned
+- Planning out the project structure and design before starting development helped me to stay organized and work more efficiently.
+- Using Git for version control and committing changes frequently allowed me to easily track my progress and revert changes if needed.
+- One of the biggest challenges I faced was getting educator feedback early on in the development process, which led to some design changes later on that could have been avoided with more educator input.
+
+### Next Steps
+- Add a signup and login page for users to create a profile.
+- Add a feature to allow users to save their progress and come back to a quiz later.
+- Add a history of user's past games on the profile page so users can review past mistakes.
+
+***
