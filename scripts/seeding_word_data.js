@@ -7,7 +7,6 @@ const { getDefinition } = require('./dictionary');
 const fileMedium = './seed_data/SpellingTwoBee.json';
 //const fileHard = './seed_data/SpellingThreeBee.json';
 
-//Writes JS object to a json file
 const toJSON = (wordInfo, file) => {
 	fs.readFile(file, 'utf-8', (err, data) => {
 		if (err) throw err;
@@ -27,13 +26,12 @@ const getWordsFromTextFile = async (path, level) => {
 	try {
 		const textFile = await open(path);
 		const words = [];
-		//Reads word from a text file
+
 		for await (const line of textFile.readLines()) words.push(line);
 
 		for (let i = 0; i < words.length; i++) {
 			setTimeout(() => {
 				try {
-					//Gets the information of the word from an API
 					getDefinition(words[i]).then((data) => {
 						if (data !== undefined) {
 							data = { id: uuid(), ...data, level: level };
