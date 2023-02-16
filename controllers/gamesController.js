@@ -1,6 +1,7 @@
 const knex = require('knex')(require('../knexfile'));
 const { v4: uuid } = require('uuid');
 
+//Posts a game to the DB
 const setGame = async (req, res) => {
 	const { user_id, level } = req.body;
 
@@ -34,6 +35,8 @@ const setGame = async (req, res) => {
 	}
 };
 
+
+//Get all of a user's game from the DB
 const getGames = async (req, res) => {
 	const userId = req.params.userId;
 
@@ -44,6 +47,8 @@ const getGames = async (req, res) => {
 		res.status(400).send(`Error retrieving games for ${userId}: ${error}`);
 	}
 };
+
+//Gets a specific game from the DB
 const getGame = async (req, res) => {
 	const gameId = req.params.gameId;
 

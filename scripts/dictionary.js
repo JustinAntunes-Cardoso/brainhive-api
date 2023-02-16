@@ -6,14 +6,14 @@ async function getDefinition(word) {
 	const url = `https://od-api.oxforddictionaries.com/api/v2/entries/en-gb/${word}`;
 
 	try {
+		//Access Oxford Dictionaries API 
 		const { data } = await axios.get(url, {
 			headers: {
 				app_id: app_id,
 				app_key: app_key,
 			},
 		});
-		// take out brackets and word use kingdom
-		//Check for errors
+		//Obtains the word, definition, audio, phonetics and etymology from the API
 		return (wordInfo = {
 			word: data.results[0].word,
 			phonetics:
