@@ -4,7 +4,7 @@ const mediumWordData = require('../seed_data/SpellingTwoBee');
 const hardWordData = require('../seed_data/SpellingThreeBee');
 
 exports.seed = async function (knex) {
-	// Seeds word data for all difficulties
+	// Deletes ALL existing entries
 	await knex('words').del();
 	await knex('words').insert(easyWordData);
 	await knex('words').insert(mediumWordData);
