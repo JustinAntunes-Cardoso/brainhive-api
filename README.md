@@ -1,9 +1,9 @@
-#BrainHive
+# BrainHive
 This is a web application for practicing spelling bee words. It includes a list of words, definitions, phonetics, etymologies and audio pronunciations. Users can take spelling quizzes and track their progress.
 
 ---
 
-##Getting Started
+## Getting Started
 To get started with this app, you'll need to have Node.js installed on your machine. Once you have Node.js installed, follow these steps:
 
 - 1. Clone the frontend from [BrainHive](https://github.com/JustinAntunes-Cardoso/brainhive) to your local machine.
@@ -15,14 +15,14 @@ To get started with this app, you'll need to have Node.js installed on your mach
 - 7. Populate the database tables with the word seed by running `npx knex seed:run` in the project directory.
 - 8. Start the backend server by running `npx nodemon index.js`.
 
-##Features
+## Features
 BrainHive includes the following features:
 
 - Choice of Difficulty: View a list of spelling bee words, their definitions, phonetics, etymologies and audio pronunciations.
 - Quizzes: Take quizzes to test your spelling skills.
 - Progress Tracking: Track your progress and see your quiz scores.
 
-##Technologies Used
+## Technologies Used
 This app was built using the following technologies:
 
 - [React](https://reactjs.org/): JavaScript library for building user interfaces.
@@ -35,7 +35,7 @@ This app was built using the following technologies:
 - [Knex](https://knexjs.org/): SQL query builder for Node.js.
 - [MySQL](https://www.mysql.com/): A RDBMS database, used for storing and retrieving user data.
 
-##Acknowledgements
+## Acknowledgements
 The word list for this app was sourced from [The National Spelling Bee](https://spellingbee.com/sites/default/files/inline-files/Words_of_the_Champions_Printable_FINAL.pdf).
 The audio pronunciations, definitions, etymologies and phonetics were sourced from [Oxford Dictionaries](https://developer.oxforddictionaries.com/).
 
